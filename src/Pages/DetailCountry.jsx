@@ -8,10 +8,17 @@ const DetailCountry = (props) => {
 
   return (
     <section className="container-detail">
-      <div>
-        <button onClick={() => (window.location.href = `/`)} className="button-back">
-          BACK
-        </button>
+      <div className="button-detail-page">
+        <div>
+          <button onClick={() => (window.location.href = `/`)} className="button">
+            Back
+          </button>
+        </div>
+        <div>
+          <button onClick={() => (window.location.href = `/`)} className="button">
+            Offer Cooperation
+          </button>
+        </div>
       </div>
 
       <div className="content-wrapper">
