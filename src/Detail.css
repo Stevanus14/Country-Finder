@@ -83,31 +83,84 @@
   text-decoration: underline;
 }
 
-/* Responsive adjustments for medium and large screens */
-@media (min-width: 768px) {
+/* Responsive for max-width 768px */
+@media (max-width: 768px) {
+  .container-detail {
+    padding: 1rem; /* Mengurangi padding di perangkat kecil */
+    margin: 1rem; /* Menambahkan margin pada sisi kanan dan kiri */
+  }
+
   .content-wrapper {
-    flex-direction: row;
+    flex-direction: column; /* Menyusun konten secara vertikal */
+    gap: 1rem;
   }
 
   .flag-container {
-    width: 40%;
+    width: 100%; /* Bendera mengambil 100% lebar */
+    margin-bottom: 1rem; /* Menambahkan margin bawah agar lebih terpisah */
+  }
+
+  .flag-image {
+    max-width: 250px; /* Mengurangi ukuran bendera */
+    max-height: 150px;
+  }
+
+  .coat-of-arms {
+    max-width: 120px; /* Ukuran lambang lebih kecil di perangkat lebih kecil */
   }
 
   .info-container {
-    padding-left: 1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container-detail {
-    max-width: 1000px;
+    padding-left: 0; /* Menghapus padding agar rata */
   }
 
   .detail-title {
-    font-size: 2rem;
+    font-size: 1.25rem; /* Ukuran font lebih kecil pada layar kecil */
   }
 
   .detail-subtitle {
-    font-size: 1.25rem;
+    font-size: 1rem; /* Mengurangi ukuran font subtitle */
+  }
+}
+
+/* Responsive for max-width 480px */
+@media (max-width: 480px) {
+  .container-detail {
+    padding: 0.75rem; /* Padding lebih kecil */
+    margin: 0.5rem; /* Margin lebih kecil agar tidak terlalu mepet dengan layar */
+  }
+
+  .content-wrapper {
+    gap: 0.75rem; /* Gap lebih kecil */
+  }
+
+  .flag-container {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .flag-image {
+    max-width: 200px; /* Bendera lebih kecil di layar kecil */
+    max-height: 120px;
+  }
+
+  .coat-of-arms {
+    max-width: 100px; /* Lambang lebih kecil */
+  }
+
+  .info-container {
+    padding-left: 0;
+  }
+
+  .detail-title {
+    font-size: 1.125rem; /* Ukuran font judul lebih kecil */
+  }
+
+  .detail-subtitle {
+    font-size: 0.9rem; /* Ukuran font subtitle lebih kecil */
+  }
+
+  .button-back {
+    font-size: 0.875rem; /* Ukuran tombol kembali lebih kecil */
+    padding: 0.375rem 0.75rem; /* Padding lebih kecil */
   }
 }
