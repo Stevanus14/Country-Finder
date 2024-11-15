@@ -1,0 +1,134 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Country-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.Country-search {
+  height: 48px;
+  font-size: 24px;
+  margin-top: 12px;
+  margin-bottom: 32px;
+  padding: 16px;
+  font-weight: 400;
+  width: 475px;
+  border-radius: 10px;
+}
+
+.Country-card {
+  width: 200px;
+  margin: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  overflow: hidden; /* agar elemen kartu tidak keluar batas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+.Country-card:hover {
+  transform: scale(1.05);
+}
+
+.Country-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  background-color: #f3f3f3;
+}
+
+.Country-body {
+  background-color: antiquewhite;
+}
+
+#nav {
+  background-color: #ffffff;
+  box-shadow: 0px 3px 10px rgb(208, 208, 208);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+#nav .navbar-brand {
+  color: #000000;
+}
+
+#nav .navbar-link {
+  color: #000000;
+}
+
+/* Responsive */
+/* small devices */
+@media (max-width: 768px) {
+  .Country-search {
+    width: 90%; /* lebar pencarian mengikuti lebar layar */
+    max-width: 400px;
+  }
+
+  .Country-container {
+    gap: 20px;
+  }
+
+  .Country-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .App-header {
+    font-size: calc(12px + 2vmin); /* menambah ukuran font di perangkat kecil */
+  }
+
+  #nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  #nav .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  #nav .navbar-link {
+    font-size: 1rem;
+  }
+}
+
+/* extra small devices (phones in portrait mode) */
+@media (max-width: 480px) {
+  .Country-search {
+    width: 90%; /* lebar pencarian mengikuti lebar layar */
+    max-width: 350px;
+  }
+
+  .Country-container {
+    gap: 10px;
+  }
+
+  .Country-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .App-header {
+    font-size: calc(14px + 2vmin); /* menambah ukuran font lebih besar di ponsel */
+  }
+}

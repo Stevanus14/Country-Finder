@@ -1,0 +1,113 @@
+.container-detail {
+  max-width: 800px;
+  margin: 2.5rem auto;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  border-radius: 8px;
+  background-color: antiquewhite;
+}
+
+.button-back {
+  color: #e3342f;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  margin-top: 1.25rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.button-back:hover {
+  background-color: #ffffff;
+}
+
+/* Main content layout */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+/* Flag and coat of arms container */
+.flag-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.flag-image {
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  max-height: 200px; /* Batas tinggi untuk kontrol ukuran */
+  object-fit: contain; /* Menjaga proporsi asli bendera */
+  margin-bottom: 24px;
+}
+
+.coat-of-arms {
+  border-radius: 8px;
+  width: 70%;
+  max-width: 150px;
+  margin-top: 1rem;
+}
+
+/* Information container */
+.info-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.detail-subtitle {
+  font-size: 1.125rem;
+  margin-top: 0.5rem;
+}
+
+.detail-link {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+.detail-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for medium and large screens */
+@media (min-width: 768px) {
+  .content-wrapper {
+    flex-direction: row;
+  }
+
+  .flag-container {
+    width: 40%;
+  }
+
+  .info-container {
+    padding-left: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-detail {
+    max-width: 1000px;
+  }
+
+  .detail-title {
+    font-size: 2rem;
+  }
+
+  .detail-subtitle {
+    font-size: 1.25rem;
+  }
+}
