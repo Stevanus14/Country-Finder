@@ -25,7 +25,6 @@
   background-color: #ffffff;
 }
 
-/* Main content layout */
 .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -33,7 +32,6 @@
   margin-top: 1.75rem;
 }
 
-/* Flag and coat of arms container */
 .flag-container {
   display: flex;
   flex-direction: column;
@@ -45,8 +43,8 @@
   border-radius: 8px;
   width: 100%;
   max-width: 300px;
-  max-height: 200px; /* Batas tinggi untuk kontrol ukuran */
-  object-fit: contain; /* Menjaga proporsi asli bendera */
+  max-height: 200px;
+  object-fit: contain;
   margin-bottom: 24px;
 }
 
@@ -57,7 +55,6 @@
   margin-top: 1rem;
 }
 
-/* Information container */
 .info-container {
   flex: 1;
   display: flex;
@@ -83,50 +80,72 @@
   text-decoration: underline;
 }
 
+/* Responsive */
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .flag-container {
+    width: 35%;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-container {
+    width: 60%;
+    padding-left: 1.5rem;
+  }
+}
+
 /* Responsive for max-width 768px */
 @media (max-width: 768px) {
   .container-detail {
-    padding: 1rem; /* Mengurangi padding di perangkat kecil */
-    margin: 1rem; /* Menambahkan margin pada sisi kanan dan kiri */
+    padding: 1rem;
+    margin: 1rem;
   }
 
   .content-wrapper {
-    flex-direction: column; /* Menyusun konten secara vertikal */
+    flex-direction: column; /* menyusun konten menjadi vertikal */
     gap: 1rem;
   }
 
   .flag-container {
-    width: 100%; /* Bendera mengambil 100% lebar */
-    margin-bottom: 1rem; /* Menambahkan margin bawah agar lebih terpisah */
+    width: 100%;
+    margin-bottom: 1rem;
   }
 
   .flag-image {
-    max-width: 250px; /* Mengurangi ukuran bendera */
+    max-width: 250px;
     max-height: 150px;
   }
 
   .coat-of-arms {
-    max-width: 120px; /* Ukuran lambang lebih kecil di perangkat lebih kecil */
+    max-width: 120px;
   }
 
   .info-container {
-    padding-left: 0; /* Menghapus padding agar rata */
+    padding-left: 0;
   }
 
   .detail-title {
-    font-size: 1.25rem; /* Ukuran font lebih kecil pada layar kecil */
+    font-size: 1.25rem;
   }
 
   .detail-subtitle {
-    font-size: 1rem; /* Mengurangi ukuran font subtitle */
+    font-size: 1rem;
   }
 }
 
-/* Responsive for max-width 480px */
+/* small devices */
 @media (max-width: 480px) {
   .container-detail {
-    padding: 0.75rem; /* Padding lebih kecil */
-    margin: 0.5rem; /* Margin lebih kecil agar tidak terlalu mepet dengan layar */
+    padding: 0.75rem;
+    margin: 0.5rem;
   }
 
   .content-wrapper {
@@ -139,12 +158,12 @@
   }
 
   .flag-image {
-    max-width: 200px; /* Bendera lebih kecil di layar kecil */
+    max-width: 200px;
     max-height: 120px;
   }
 
   .coat-of-arms {
-    max-width: 100px; /* Lambang lebih kecil */
+    max-width: 100px;
   }
 
   .info-container {
@@ -152,15 +171,15 @@
   }
 
   .detail-title {
-    font-size: 1.125rem; /* Ukuran font judul lebih kecil */
+    font-size: 1.125rem;
   }
 
   .detail-subtitle {
-    font-size: 0.9rem; /* Ukuran font subtitle lebih kecil */
+    font-size: 0.9rem;
   }
 
   .button-back {
-    font-size: 0.875rem; /* Ukuran tombol kembali lebih kecil */
-    padding: 0.375rem 0.75rem; /* Padding lebih kecil */
+    font-size: 0.875rem;
+    padding: 0.375rem 0.75rem;
   }
 }
