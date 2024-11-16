@@ -7,14 +7,13 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
   border-radius: 8px;
-  background-color: antiquewhite;
+  background-color: #ebf1fd;
 }
 
 .button {
   color: #e3342f;
   border-radius: 8px;
   padding: 0.5rem 1rem;
-  margin-top: 1.25rem;
   background: transparent;
   border: none;
   cursor: pointer;

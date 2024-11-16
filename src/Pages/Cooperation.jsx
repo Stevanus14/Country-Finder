@@ -13,7 +13,7 @@ const CooperationList = ({ cooperationList, handleRemove }) => {
         <Card.Img variant="top" src={country.flags.png} />
         <Card.Body className="Country-body">
           <Card.Title>{country.name.common}</Card.Title>
-          <button onClick={() => handleRemove(country.name.common)} className="button" style={{ fontSize: "20px" }}>
+          <button onClick={() => handleRemove(country.name.common)} className="button" style={{ fontSize: "16px" }}>
             Cancel Cooperation
           </button>
         </Card.Body>
@@ -48,7 +48,7 @@ const Cooperation = () => {
         <NavigationBar />
       </div>
       <div className="App-header">
-        <h1>Cooperation List</h1>
+        <h1>Cooperation Countries</h1>
         <div className="Country-container" style={{ marginTop: "20px" }}>
           <CooperationList cooperationList={cooperationList} handleRemove={handleRemoveCooperation} />
         </div>

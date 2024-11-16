@@ -6,7 +6,7 @@ import { Card } from "react-bootstrap";
 
 const ListCountry = () => {
   const [allCountry, setAllCountry] = useState([]);
-  const [error, setError] = useState(null); // Menambahkan state error untuk menampilkan pesan error
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     getCountryList().then((data) => {
@@ -20,13 +20,15 @@ const ListCountry = () => {
       allCountry.map((country, i) => (
         <Card className="Country-card" key={i} onClick={() => (window.location.href = `/detailCountry/${country.name.common}`)} style={{ cursor: "pointer" }}>
           <Card.Img variant="top" src={country.flags.png} />
-          <Card.Body className="Country-body">
-            <Card.Title>{country.name.common}</Card.Title>
+          <Card.Body className="Country-body" style={{ alignContent: "center" }}>
+            <Card.Title className="Country-title" style={{ marginBottom: "0" }}>
+              {country.name.common}
+            </Card.Title>
           </Card.Body>
         </Card>
       ))
     ) : (
-      <p>{error || "No countries to display"}</p> // Menampilkan pesan error atau pesan default
+      <p>{error || "No countries to display"}</p> // menampilkan pesan error atau pesan default
     );
   };
 
@@ -34,17 +36,17 @@ const ListCountry = () => {
     try {
       if (q.length > 3) {
         const query = await searchCountry(q);
-        setError(null); // Reset error ketika pencarian berhasil
+        setError(null); // reset error saat pencarian berhasil
         setAllCountry(query);
       } else if (q.length === 0) {
         const allCountries = await getCountryList();
-        setError(null); // Reset error jika input kosong
+        setError(null); // reset error jika input kosong
         setAllCountry(allCountries);
       }
     } catch (error) {
       console.error("Error while searching for country: ", error);
-      setError("Country not found!"); // Set pesan error jika negara tidak ditemukan
-      setAllCountry([]); // Kosongkan daftar negara jika ada error
+      setError("Country not found!"); // set pesan error jika negara tidak ditemukan
+      setAllCountry([]); // kosongkan daftar negara jika ada error
     }
   };
 
@@ -55,10 +57,10 @@ const ListCountry = () => {
         <NavigationBar />
       </div>
       <div className="App-header">
-        <h1>Web Country List</h1>
+        <h1>List of Countries</h1>
         <input placeholder="Search by name.." className="Country-search" onChange={({ target }) => search(target.value)} />
         <div className="Country-container">
-          <AllCountryList /> {/* Memanggil komponen sebagai JSX */}
+          <AllCountryList />
         </div>
       </div>
     </div>

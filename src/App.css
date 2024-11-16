@@ -1,9 +1,11 @@
 .App {
   text-align: center;
+  background-color: #ebf1fd;
+  font-family: "Poppins", sans-serif;
 }
 
 .App-header {
-  background-color: #ffffff;
+  background-color: #ebf1fd;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,13 +30,14 @@
 
 .Country-search {
   height: 48px;
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 12px;
   margin-bottom: 32px;
   padding: 16px;
   font-weight: 400;
   width: 475px;
   border-radius: 10px;
+  border: none;
 }
 
 .Country-card {
@@ -58,7 +61,7 @@
 }
 
 .Country-body {
-  background-color: antiquewhite;
+  background-color: rgb(255, 243, 243);
 }
 
 #nav {
