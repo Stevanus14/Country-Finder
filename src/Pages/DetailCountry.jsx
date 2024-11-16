@@ -57,10 +57,12 @@ const DetailCountry = ({ detail, isInCooperation, handleOfferCooperation }) => {
 };
 
 const DetailCountryPage = () => {
+  //useParams mengambil parameter id dari URL, yang berisi nama negara.
   const { id } = useParams();
   const [countryDetail, setCountryDetail] = useState(null);
   const [isInCooperation, setIsInCooperation] = useState(false);
 
+  //useEffect mengambil data detail negara dari API
   useEffect(() => {
     // Fetch detail negara
     axios
@@ -80,6 +82,7 @@ const DetailCountryPage = () => {
   const handleOfferCooperation = () => {
     const success = Math.random() > 0.5; //peluang 50% sukses
     if (success) {
+      //jika berhasil data disimpan di localStorage
       const storedCooperation = JSON.parse(localStorage.getItem("cooperationList")) || [];
       storedCooperation.push(countryDetail);
       localStorage.setItem("cooperationList", JSON.stringify(storedCooperation));

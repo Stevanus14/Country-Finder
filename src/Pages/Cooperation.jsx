@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "react-bootstrap";
-//import { useNavigate } from "react-router-dom";
 import "../App.css";
 import "../Detail.css";
 import NavigationBar from "../Components/NavigationBar";
 
 const CooperationList = ({ cooperationList, handleRemove }) => {
-  // Menampilkan daftar negara kerja sama
+  // menampilkan daftar negara kerja sama
   return cooperationList.length > 0 ? (
     cooperationList.map((country, i) => (
       <Card className="Country-card" key={i} onClick={() => (window.location.href = `/detailCountry/${country.name.common}`)} style={{ cursor: "pointer" }}>
@@ -26,15 +25,14 @@ const CooperationList = ({ cooperationList, handleRemove }) => {
 
 const Cooperation = () => {
   const [cooperationList, setCooperationList] = useState([]);
-  // const navigate = useNavigate();
 
-  // Ambil data kerja sama dari localStorage saat komponen dimuat
+  // ambil data kerja sama dari localStorage saat komponen dimuat
   useEffect(() => {
     const storedCooperation = JSON.parse(localStorage.getItem("cooperationList")) || [];
     setCooperationList(storedCooperation);
   }, []);
 
-  // Fungsi untuk menghapus negara dari daftar kerja sama
+  // fungsi untuk menghapus negara dari daftar kerja sama dengan filter
   const handleRemoveCooperation = (countryName) => {
     const updatedList = cooperationList.filter((country) => country.name.common !== countryName);
     setCooperationList(updatedList);

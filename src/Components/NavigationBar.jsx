@@ -12,6 +12,7 @@ const NavigationBar = () => {
             <img src={logo} alt="Country Finder Logo" style={{ height: "30px", marginRight: "10px" }} />
             <b>Country Finder</b>
           </Navbar.Brand>
+          {/* saat layar kecil, akan menampilkan toogle/menu burger */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">

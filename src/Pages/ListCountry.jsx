@@ -8,6 +8,7 @@ const ListCountry = () => {
   const [allCountry, setAllCountry] = useState([]);
   const [error, setError] = useState(null);
 
+  //untuk mengambil data negara ketika dimuat
   useEffect(() => {
     getCountryList().then((data) => {
       setAllCountry(data);
@@ -16,6 +17,7 @@ const ListCountry = () => {
 
   const AllCountryList = () => {
     //allCountry.length > 0 (jika ada data negara, maka akan ditampilkan)
+    /* i adalah index dan key{i} dibutuhkan react untuk mengidentifikasi setiap elemen dalam list yang di-render */
     return allCountry.length > 0 ? (
       allCountry.map((country, i) => (
         <Card className="Country-card" key={i} onClick={() => (window.location.href = `/detailCountry/${country.name.common}`)} style={{ cursor: "pointer" }}>
@@ -37,8 +39,9 @@ const ListCountry = () => {
       if (q.length > 3) {
         const query = await searchCountry(q);
         setError(null); // reset error saat pencarian berhasil
-        setAllCountry(query);
+        setAllCountry(query); //update state allCountry dengan hasil pencarian
       } else if (q.length === 0) {
+        //saat input search kosong maka akan tampilkan semua list negara lagi
         const allCountries = await getCountryList();
         setError(null); // reset error jika input kosong
         setAllCountry(allCountries);
