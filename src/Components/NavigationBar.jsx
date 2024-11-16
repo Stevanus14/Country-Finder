@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
+import logo from "../Assets/world.png"; // Import gambar logo kamu
 
 const NavigationBar = () => {
   const navigate = useNavigate();
@@ -8,6 +9,7 @@ const NavigationBar = () => {
       <Navbar id="nav" expand="lg" bg="light" variant="light">
         <Container>
           <Navbar.Brand onClick={() => navigate("/")}>
+            <img src={logo} alt="Country Finder Logo" style={{ height: "30px", marginRight: "10px" }} />
             <b>Country Finder</b>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
