@@ -47,6 +47,11 @@ const Cooperation = () => {
       </div>
       <div className="App-header">
         <h1>Cooperation Countries</h1>
+        <input
+          placeholder="Search by name.."
+          className="Country-search"
+          // onChange={({ target }) => search(target.value)}
+        />
         <div className="Country-container" style={{ marginTop: "20px" }}>
           <CooperationList cooperationList={cooperationList} handleRemove={handleRemoveCooperation} />
         </div>

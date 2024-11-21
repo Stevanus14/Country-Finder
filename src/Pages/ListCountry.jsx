@@ -15,6 +15,13 @@ const ListCountry = () => {
     });
   }, []);
 
+  const handleSort = (data) => {
+    const sortedData = [...data].sort((a, b) => {
+      return a.firts > b.first ? 1 : -1;
+    });
+    setAllCountry(sortedData);
+  };
+
   const AllCountryList = () => {
     //allCountry.length > 0 (jika ada data negara, maka akan ditampilkan)
     /* i adalah index dan key{i} dibutuhkan react untuk mengidentifikasi setiap elemen dalam list yang di-render */
@@ -52,8 +59,7 @@ const ListCountry = () => {
       setAllCountry([]); // kosongkan daftar negara jika ada error
     }
   };
-
-  // console.log({ allCountry });
+  console.log({ allCountry });
   return (
     <div className="App">
       <div className="Navbar">
@@ -61,6 +67,7 @@ const ListCountry = () => {
       </div>
       <div className="App-header">
         <h1>List of Countries</h1>
+        <button onClick={() => handleSort()}>Sort</button>
         <input placeholder="Search by name.." className="Country-search" onChange={({ target }) => search(target.value)} />
         <div className="Country-container">
           <AllCountryList />
