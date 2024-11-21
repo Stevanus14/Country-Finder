@@ -36,7 +36,7 @@ const ListCountry = () => {
 
   const search = async (q) => {
     try {
-      if (q.length > 3) {
+      if (q.length > 0) {
         const query = await searchCountry(q);
         setError(null); // reset error saat pencarian berhasil
         setAllCountry(query); //update state allCountry dengan hasil pencarian
