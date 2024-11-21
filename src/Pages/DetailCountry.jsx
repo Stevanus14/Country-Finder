@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../Detail.css";
 
-const DetailCountry = ({ detail, isInCooperation, handleOfferCooperation }) => {
+const DetailCountry = ({ detail, isInCooperation, handleOfferCooperation, handleRemove, country }) => {
   return (
     <section className="container-detail">
       <div className="button-detail-page">
@@ -52,6 +52,9 @@ const DetailCountry = ({ detail, isInCooperation, handleOfferCooperation }) => {
           <img className="coat-of-arms" src={detail.coatOfArms?.png} alt={`${detail.name?.common} coat of arms`} />
         </div>
       </div>
+      <button className="button" onClick={() => handleRemove(detail.name.common)} style={{ fontSize: "16px" }}>
+        Cancel Cooperation
+      </button>
     </section>
   );
 };
@@ -61,6 +64,15 @@ const DetailCountryPage = () => {
   const { id } = useParams();
   const [countryDetail, setCountryDetail] = useState(null);
   const [isInCooperation, setIsInCooperation] = useState(false);
+  const [cooperationList, setCooperationList] = useState([]);
+
+  // fungsi untuk menghapus negara dari daftar kerja sama dengan filter
+  const handleRemoveCooperation = (countryName) => {
+    const updatedList = cooperationList.filter((detail) => detail.name.common !== countryName);
+    setCooperationList(updatedList);
+    localStorage.setItem("cooperationList", JSON.stringify(updatedList));
+    alert(`${countryName} has been removed from the cooperation list.`);
+  };
 
   //useEffect mengambil data detail negara dari API
   useEffect(() => {
@@ -95,7 +107,7 @@ const DetailCountryPage = () => {
 
   if (!countryDetail) return <p>Loading...</p>;
 
-  return <DetailCountry detail={countryDetail} isInCooperation={isInCooperation} handleOfferCooperation={handleOfferCooperation} />;
+  return <DetailCountry detail={countryDetail} isInCooperation={isInCooperation} handleOfferCooperation={handleOfferCooperation} handleRemove={handleRemoveCooperation} />;
 };
 
 export default DetailCountryPage;
